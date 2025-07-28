@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Microsoft Case ID Verification</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <img src="microsoft.png" alt="Microsoft Logo" class="apple-logo" />
+    <h2>Microsoft Verified Technician</h2>
+    <p class="subtext">Only Microsoft verified technicians can generate valid Case IDs.</p>
+
+    <form onsubmit="return verifyCaseID()">
+      <input type="text" id="caseId" placeholder="Enter Case ID" required />
+      <button type="submit">Verify Case ID</button>
+    </form>
+
+    <p id="error" class="error-message"></p>
+  </div>
+
+  <script>
+    function verifyCaseID() {
+      const id = document.getElementById("caseId").value.trim();
+      if (id === "778249") {
+        window.location.href = "assigned.html";
+      } else if (id === "556221") {
+        window.location.href = "james.html";
+      } else {
+        document.getElementById("error").innerText = "❌ Invalid Case ID. Please try again.";
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>
